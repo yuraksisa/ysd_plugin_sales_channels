@@ -1,0 +1,14 @@
+sales_channels_management:
+  title: Canales de venta
+  description: Canales de venta
+  table:
+    id: Id
+    name: Nombre
+    code: Código
+  form:
+    name:
+      label: Nombre
+    code:
+      label: Código
+sales_channel_booking_configuration:
+  title: Configuración canal de venta

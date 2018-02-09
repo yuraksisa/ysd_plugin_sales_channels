@@ -1,0 +1,49 @@
+require(["jquery", "YSDEntityManagement", "jquery.ui", "YSDjson2"], 
+         function($, EntityManagement, EntityManagementComplementHooks) {
+    
+  var salesChannelsHook = {
+     
+       
+    entityKey : function(entity) {
+      return entity.id;
+    },
+
+    onEdit : function(entity) {
+      $('#name').focus();
+      this.configForm(entity);
+    },
+  
+    onNew : function() {
+      $('#name').focus();
+      this.configForm(null);
+    },
+
+    configForm: function(entity) {
+       if (entity != null) {
+           // Embed prices
+           $.ajax({url: '/admin/sales-channels/sales-channels/'+entity.id+'/booking-setup',
+                   dataType: 'text'}).done(function (html) {
+               var dom = $('<html />').prop('innerHTML', html);
+               $('#sales_channel_booking_configuration').html(dom.find('body #content'));
+               $('head').append(dom.find('script:not([src])'));
+           });
+       }
+    }
+        
+
+  };
+
+  var urls = { query_url  : '/api/sales-channels',
+               create_url : '/api/sales-channel',
+               update_url : '/api/sales-channel',
+               delete_url : '/api/sales-channel',
+               get_url    : '/api/sales-channel'
+             };
+  
+  var hooks = [salesChannelsHook];
+                 
+  var hooksManager = new EntityManagement(urls, 'sales-channels',
+     <%=sales_channels%>, hooks, {prefix: '/admin/sales-channels'});
+
+  
+});

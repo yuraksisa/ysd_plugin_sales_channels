@@ -1,0 +1,123 @@
+<div class="top-navigation-bar">
+  <h2 class="entity-title"><%=t.sales_channel_booking_configuration.title%></h2>
+</div>
+<div class="admin_content_wrapper"  style="background-color: #f5f5f5; margin: 0">
+  <div data-alerts="alerts" data-titles="{'success':'<%=t.entitymanagement.success%>','warning':'<%=t.entitymanagement.warning%>','error':'<%=t.entitymanagement.error%>'}" data-fade="10000"></div>
+
+  <div id="content">
+
+    <br>
+
+    <div class="row">
+      <div class="col-sm-12 col-md-10 col-md-offset-1">
+        <div class="block ">
+          <div class="block-header bg-gray-lighter">
+            <h3 class="block-title"><%=t.booking_settings.form.notificacion_smtp_setup%></h3>
+          </div>
+          <div class="block-content block-content-narrow">
+            <form name="variables" action="/api/svariables" method="PUT"
+                  data-remote="ajax" data-remote-method="PUT" class="form-horizontal">
+              <%= render_secure_variable_input_text("smtp.from.sc.#{@sales_channel_booking.sales_channel.code}", t.email_settings.form.smtp.from, 80, 80) %>
+              <%= render_secure_variable_input_text("smtp.host.sc.#{@sales_channel_booking.sales_channel.code}", t.email_settings.form.smtp.host, 80, 80) %>
+              <%= render_secure_variable_input_text("smtp.port.sc.#{@sales_channel_booking.sales_channel.code}", t.email_settings.form.smtp.port, 80, 80) %>
+              <%= render_secure_variable_input_text("smtp.username.sc.#{@sales_channel_booking.sales_channel.code}", t.email_settings.form.smtp.username, 80, 80) %>
+              <%= render_secure_variable_input_text("smtp.password.sc.#{@sales_channel_booking.sales_channel.code}", t.email_settings.form.smtp.password, 80, 80) %>
+              <%= render_secure_variable_input_text("smtp.domain.sc.#{@sales_channel_booking.sales_channel.code}", t.email_settings.form.smtp.domain, 80, 80) %>
+              <%= render_secure_variable_input_text("smtp.authentication.sc.#{@sales_channel_booking.sales_channel.code}", t.email_settings.form.smtp.authentication, 80, 80) %>
+
+              <%= render_secure_variable_checkbox_boolean("smtp.starttls_auto.sc.#{@sales_channel_booking.sales_channel.code}", t.email_settings.form.smtp.starttls_auto) %>
+
+              <div class="form-group">
+                <div class="col-xs-12">
+                  <button class="button btn btn-sm btn-primary pull-right" type="submit"><i class="fa fa-save push-5-r"></i> <%=t.entitymanagement.update%></button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 col-md-10 col-md-offset-1">
+        <div class="block ">
+          <div class="block-header bg-gray-lighter">
+            <h3 class="block-title"><%=t.booking_configuration_templates.email_customer_request_received%></h3>
+          </div>
+          <div class="block-content block-content-narrow">
+            <form name="templates" action="/api/templates" method="PUT"
+                  data-remote="ajax" data-remote-method="PUT" class="all-space">
+              <%= render_template_editor "booking_customer_req_notification.sc.#{@sales_channel_booking.sales_channel.code}",'','' %>
+              <div class="formrow-botonera">
+                <input type="submit" value="<%=t.entitymanagement.update%>"
+                       class="button blue-button">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 col-md-10 col-md-offset-1">
+        <div class="block ">
+          <div class="block-header bg-gray-lighter">
+            <h3 class="block-title"><%=t.booking_configuration_templates.email_customer_reservation_confirmed%></h3>
+          </div>
+          <div class="block-content block-content-narrow">
+            <form name="templates" action="/api/templates" method="PUT"
+                  data-remote="ajax" data-remote-method="PUT" class="all-space">
+              <%= render_template_editor "booking_customer_notification.sc.#{@sales_channel_booking.sales_channel.code}",'','' %>
+              <div class="formrow-botonera">
+                <input type="submit" value="<%=t.entitymanagement.update%>"
+                       class="button blue-button">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 col-md-10 col-md-offset-1">
+        <div class="block ">
+          <div class="block-header bg-gray-lighter">
+            <h3 class="block-title"><%=t.booking_configuration_templates.email_customer_payment_request_received%></h3>
+          </div>
+          <div class="block-content block-content-narrow">
+            <form name="templates" action="/api/templates" method="PUT"
+                  data-remote="ajax" data-remote-method="PUT" class="all-space">
+              <%= render_template_editor "booking_customer_req_pay_now_notification.sc.#{@sales_channel_booking.sales_channel.code}",'','' %>
+              <div class="formrow-botonera">
+                <input type="submit" value="<%=t.entitymanagement.update%>"
+                       class="button blue-button">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 col-md-10 col-md-offset-1">
+        <div class="block ">
+          <div class="block-header bg-gray-lighter">
+            <h3 class="block-title"><%=t.booking_configuration_templates.email_customer_payment_enabled%></h3>
+          </div>
+          <div class="block-content block-content-narrow">
+            <form name="templates" action="/api/templates" method="PUT"
+                  data-remote="ajax" data-remote-method="PUT" class="all-space">
+              <%= render_template_editor "booking_customer_notification_payment_enabled.sc.#{@sales_channel_booking.sales_channel.code}",'','' %>
+              <div class="formrow-botonera">
+                <input type="submit" value="<%=t.entitymanagement.update%>"
+                       class="button blue-button">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
