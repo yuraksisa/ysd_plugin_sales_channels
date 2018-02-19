@@ -2,6 +2,7 @@ require "ysd_plugin_sales_channels/version"
 
 require "ysd_plugin_sales_channels/model/ysd_md_sales_channels"
 require "ysd_plugin_sales_channels/model/ysd_md_sales_channels_booking"
+require "ysd_plugin_sales_channels/model/ysd_md_sales_channels_payment"
 
 require "ysd_plugin_sales_channels/sinatra/ysd_sinatra_sales_channels"
 require "ysd_plugin_sales_channels/sinatra/ysd_sinatra_sales_channels_management"
