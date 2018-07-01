@@ -11,7 +11,8 @@ module Yito
         property :id, Serial
         property :code, String, length: 50
         property :name, String, length: 256
-        
+        property :color, String, length: 50
+
         # ------------------------------- Hooks -------------------------------------------
         # 
         after :create do
