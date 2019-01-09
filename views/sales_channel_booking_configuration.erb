@@ -12,7 +12,7 @@
       <div class="col-sm-12 col-md-10 col-md-offset-1">
         <div class="block ">
           <div class="block-header bg-gray-lighter">
-            <h3 class="block-title"><%=t.booking_settings.form.notificacion_smtp_setup%></h3>
+            <h3 class="block-title"><%=t.booking_settings.notifications.notificacion_smtp_setup%></h3>
           </div>
           <div class="block-content block-content-narrow">
             <form name="variables" action="/api/svariables" method="PUT"
@@ -47,16 +47,16 @@
           <div class="block-content">
             <ul class="nav nav-tabs" data-toggle="tabs">
               <li class="active">
-                <a id="request_notification" href="#btabs-static-request"><%=t.booking_configuration_templates.email_customer_request_received%></a>
+                <a id="request_notification" href="#btabs-static-request"><%=t.booking_settings.notifications.email_customer_request_received%></a>
               </li>
               <li class="">
-                <a id="confirmation_notification" href="#btabs-static-confirmation"><%=t.booking_configuration_templates.email_customer_reservation_confirmed%></a>
+                <a id="confirmation_notification" href="#btabs-static-confirmation"><%=t.booking_settings.notifications.email_customer_reservation_confirmed%></a>
               </li>
               <li class="">
-                <a id="request_payment_notification" href="#btabs-static-payment-request"><%=t.booking_configuration_templates.email_customer_payment_request_received%></a>
+                <a id="request_payment_notification" href="#btabs-static-payment-request"><%=t.booking_settings.notifications.email_customer_payment_request_received%></a>
               </li>
               <li class="">
-                <a id="payment_enabled_notification" href="#btabs-static-payment-enabled"><%=t.booking_configuration_templates.email_customer_payment_enabled%></a>
+                <a id="payment_enabled_notification" href="#btabs-static-payment-enabled"><%=t.booking_settings.notifications.email_customer_payment_enabled%></a>
               </li>
             </ul>
             <div class="block-content tab-content">
